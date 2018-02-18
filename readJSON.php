@@ -5,10 +5,10 @@ This PHP script connects to the database and inserts the collected data from the
 */
 
 //server info
-$servername = "testdatabase.c2uw4uu5co9m.us-west-2.rds.amazonaws.com";
-$username = "lukewarm11";
-$password = "Leel1995!";
-$dbname = "testdb";
+$servername = "";
+$username = "";
+$password = "";
+$dbname = "";
 
 //Make new sql connection
 $con = mysqli_connect($servername, $username, $password, $dbname);
