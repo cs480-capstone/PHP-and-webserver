@@ -17,7 +17,7 @@ if(!$con)
 {
 	die("connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT * FROM Users ORDER BY totalpoints"; //the actual query, pulls everything from Users
+$sql = "SELECT * FROM Users ORDER BY totalpoints DESC"; //the actual query, pulls everything from Users
 $result = mysqli_query($con, $sql); //holds whether the query was successful
 //if the result was successful then pull the information needed from database and put it into an array
 if(mysqli_num_rows($result) > 0) 
