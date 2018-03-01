@@ -6,10 +6,10 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 thiss PHP script retreives the posted data connects to the database and update the users table.
 */
 //server info
-$servername = "testdatabase.c2uw4uu5co9m.us-west-2.rds.amazonaws.com";
-$username = "lukewarm11";
-$password = "Leel1995!";
-$dbname = "testdb";
+$servername = "";
+$username = "";
+$password = "";
+$dbname = "";
 //Make new sql connection
 $con = mysqli_connect($servername, $username, $password, $dbname);
 //check whether connection was successful or not
