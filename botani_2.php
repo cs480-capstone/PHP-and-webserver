@@ -5,10 +5,10 @@ header('Access-Control-Allow-Origin: *');
 This PHP script connects to the database and queries the Trees table to pull latitude, longitude, deocrators array, Special Events, and whether or not the tree is hidden and puts it into a json file.
 */
 //server info
-$servername = "testdatabase.c2uw4uu5co9m.us-west-2.rds.amazonaws.com";
-$username = "lukewarm11";
-$password = "Leel1995!";
-$dbname = "testdb";
+$servername = "";
+$username = "";
+$password = "";
+$dbname = "";
 //Make new sql connection
 $con = mysqli_connect($servername, $username, $password, $dbname);
 //check whether connection was succesful or not
