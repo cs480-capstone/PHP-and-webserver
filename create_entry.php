@@ -19,7 +19,7 @@ if(!$con){
 $json = file_get_contents("php://input"); //read json data
 $json_data = json_decode($json); //pull the information from the json file and put it into an array
 //data that will be the same for each type of tree
-$user = (int)$json_data->user; //user information
+$username = (int)$json_data->username; //user information
 $tree = (int)$json_data->tree; //tree id
 $time = date('y/m/d h:i:sa'); //the time that the collection occured
 $openPollenConesValue = (int)$json_data->openPollenConesValue; //breaking needle buds: integer
@@ -46,7 +46,7 @@ $coloredLeavesRadioValue = $json_data->coloredLeavesRadioValue;//
 
 
 	//the sql that will put the information into each column in the database 
-	$sqli = "INSERT INTO Entry (User, Tree, Timedate, openPollenConesValue, unfoldingLeavesValue, fullSizedLeavesValue, coloredLeavesValue, openedFlowersValue, ripeFruitsValue, breakingNeedleBudsValue, youngNeedlesValue, freshPollenConesValue, unripeSeedConesValue, ripeSeedConesValue, droppedSeedConesValue, breakingLeafBudsValue, flowerBudsValue, fruitsValue, droppedFruitsValue, openPollenConesRadioValue, coloredLeavesRadioValue  ) VALUES ($user, $tree, '$time', $openPollenConesValue, $unfoldingLeavesValue, $fullSizedLeavesValue, $coloredLeavesValue, $openedFlowersValue, $ripeFruitsValue, $breakingNeedleBudsValue, $youngNeedlesValue, $freshPollenConesValue, $unripeSeedConesValue, $ripeSeedConesValue, $droppedSeedConesValue, $breakingLeafBudsValue, $flowerBudsValue, $fruitsValue, $droppedFruitsValue, '$openPollenConesRadioValue', '$coloredLeavesRadioValue'  )";
+	$sqli = "INSERT INTO Entry (Username, Tree, Timedate, openPollenConesValue, unfoldingLeavesValue, fullSizedLeavesValue, coloredLeavesValue, openedFlowersValue, ripeFruitsValue, breakingNeedleBudsValue, youngNeedlesValue, freshPollenConesValue, unripeSeedConesValue, ripeSeedConesValue, droppedSeedConesValue, breakingLeafBudsValue, flowerBudsValue, fruitsValue, droppedFruitsValue, openPollenConesRadioValue, coloredLeavesRadioValue  ) VALUES ($username, $tree, '$time', $openPollenConesValue, $unfoldingLeavesValue, $fullSizedLeavesValue, $coloredLeavesValue, $openedFlowersValue, $ripeFruitsValue, $breakingNeedleBudsValue, $youngNeedlesValue, $freshPollenConesValue, $unripeSeedConesValue, $ripeSeedConesValue, $droppedSeedConesValue, $breakingLeafBudsValue, $flowerBudsValue, $fruitsValue, $droppedFruitsValue, '$openPollenConesRadioValue', '$coloredLeavesRadioValue'  )";
 	$result = mysqli_query($con, $sqli);//result holds whether the query was succesful or not
 	//if it was not successful then it will print out the error
 	if($result===false){
