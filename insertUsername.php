@@ -18,7 +18,7 @@
         $json_data = json_decode($json); //pull the information from the json file and put it into an array
     
         $username = $json_data->username;
-	$points = $json_data->points;
+	$points = (int)$json_data->points;
         $query = "INSERT INTO Users ( username, totalPoints) VALUES ( '$username', $points)";
         $result = mysqli_query($con, $query);
 	//if it was not successful then it will print out the error
